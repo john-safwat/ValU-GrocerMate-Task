@@ -1,0 +1,11 @@
+{
+  "showDeals": true,
+  "enablePriceRevalidation": true,
+  "taxRate": 0.05,
+  "currency": "USD",
+  "deliveryFee": 1.00,
+  "freeDeliveryThreshold": 25.00,
+  "searchDebounceMs": 400,
+  "enableSavedForLater": true,
+  "maintenanceMode": false
+}

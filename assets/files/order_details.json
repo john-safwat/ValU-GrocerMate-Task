@@ -1,0 +1,22 @@
+{
+  "orderId": "o_7101",
+  "status": "placed",
+  "createdAt": "2025-08-13T14:22:01Z",
+  "currency": "USD",
+  "items": [
+    {
+      "productId": "p_milk_2pct",
+      "qty": 2,
+      "unitPrice": 1.29
+    },
+    {
+      "productId": "p_apple_gala",
+      "qty": 1,
+      "unitPrice": 2.49
+    }
+  ],
+  "subtotal": 5.07,
+  "tax": 0.25,
+  "deliveryFee": 1.00,
+  "total": 6.32
+}

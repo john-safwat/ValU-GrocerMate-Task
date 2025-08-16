@@ -1,0 +1,13 @@
+{
+  "stocks": [
+    {
+      "productId": "p_milk_2pct",
+      "stock": 6
+    },
+    {
+      "productId": "p_bread_sourdough",
+      "stock": 12
+    }
+  ],
+  "timestamp": "2025-08-13T14:22:30Z"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "partial",
+  "fulfilled": [
+    {
+      "productId": "p_milk_2pct",
+      "qty": 2
+    }
+  ],
+  "missing": [
+    {
+      "productId": "p_apple_gala",
+      "qty": 1
+    }
+  ],
+  "note": "You can place the missing item again later."
+}

@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "productId": "p_milk_2pct",
+      "qty": 2,
+      "expectedPrice": 1.29
+    },
+    {
+      "productId": "p_apple_gala",
+      "qty": 1,
+      "expectedPrice": 2.49
+    },
+    {
+      "productId": "p_bread_sourdough",
+      "qty": 1,
+      "expectedPrice": 2.79
+    }
+  ],
+  "currency": "USD"
+}

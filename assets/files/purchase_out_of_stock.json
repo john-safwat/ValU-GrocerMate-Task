@@ -1,0 +1,13 @@
+{
+  "status": "out_of_stock",
+  "items": [
+    {
+      "productId": "p_apple_gala",
+      "available": 0
+    },
+    {
+      "productId": "p_bread_sourdough",
+      "available": 1
+    }
+  ]
+}

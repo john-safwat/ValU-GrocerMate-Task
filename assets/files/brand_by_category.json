@@ -1,0 +1,5 @@
+{
+  "c_fruit": ["FreshFarm","SunnyOrchard","GreenLeaf"],
+  "c_dairy": ["DairyPure","MilkWay","FarmGold"],
+  "c_bakery": ["BakeHouse","Crust&Co","MorningOven"]
+}

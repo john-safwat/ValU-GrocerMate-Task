@@ -1,0 +1,15 @@
+{
+  "status": "price_changed",
+  "changes": [
+    {
+      "productId": "p_milk_2pct",
+      "oldPrice": 1.29,
+      "newPrice": 1.39
+    },
+    {
+      "productId": "p_bread_sourdough",
+      "oldPrice": 2.79,
+      "newPrice": 2.59
+    }
+  ]
+}

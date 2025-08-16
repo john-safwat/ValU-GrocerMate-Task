@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "id": "p_bread_sourdough",
+      "title": "Sourdough Bread",
+      "brand": "BakeHouse",
+      "price": 2.79,
+      "originalPrice": 2.99,
+      "stock": 12,
+      "image": "https://picsum.photos/seed/sourdough/600/400",
+      "badges": [
+        "fresh"
+      ],
+      "categoryId": "c_bakery",
+      "rating": 4.6
+    },
+    {
+      "id": "p_croissant_butter",
+      "title": "Butter Croissant (2pcs)",
+      "brand": "Crust&Co",
+      "price": 1.49,
+      "originalPrice": 1.69,
+      "stock": 35,
+      "image": "https://picsum.photos/seed/croissant/600/400",
+      "badges": [
+        "deal"
+      ],
+      "categoryId": "c_bakery",
+      "rating": 4.5
+    }
+  ],
+  "page": 1,
+  "pageSize": 10,
+  "total": 40
+}

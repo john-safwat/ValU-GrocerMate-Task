@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "id": "p_milk_2pct",
+      "title": "Milk 2% 1L",
+      "brand": "DairyPure",
+      "price": 1.29,
+      "originalPrice": 1.49,
+      "stock": 6,
+      "image": "https://picsum.photos/seed/milk1/600/400",
+      "badges": [
+        "deal"
+      ],
+      "categoryId": "c_dairy",
+      "rating": 4.3
+    },
+    {
+      "id": "p_cheddar_block",
+      "title": "Cheddar Cheese (200g)",
+      "brand": "FarmGold",
+      "price": 2.39,
+      "originalPrice": 2.39,
+      "stock": 24,
+      "image": "https://picsum.photos/seed/cheddar/600/400",
+      "badges": [],
+      "categoryId": "c_dairy",
+      "rating": 4.0
+    },
+    {
+      "id": "p_yogurt_plain",
+      "title": "Yogurt Plain (500g)",
+      "brand": "MilkWay",
+      "price": 1.09,
+      "originalPrice": 1.29,
+      "stock": 44,
+      "image": "https://picsum.photos/seed/yogurt/600/400",
+      "badges": [
+        "deal",
+        "protein"
+      ],
+      "categoryId": "c_dairy",
+      "rating": 4.4
+    }
+  ],
+  "page": 1,
+  "pageSize": 10,
+  "total": 65
+}

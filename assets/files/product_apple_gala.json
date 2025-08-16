@@ -1,0 +1,22 @@
+{
+  "id": "p_apple_gala",
+  "title": "Apple Gala (1kg)",
+  "brand": "FreshFarm",
+  "price": 2.49,
+  "originalPrice": 2.99,
+  "stock": 37,
+  "images": [
+    "https://picsum.photos/seed/apple/600/400"
+  ],
+  "description": "Crisp and sweet Gala apples.",
+  "nutrition": {
+    "calories": 52,
+    "fiber": 2.4,
+    "vitaminC": 7
+  },
+  "allergens": [],
+  "related": [
+    "p_banana_chiquita",
+    "p_orange_navel"
+  ]
+}

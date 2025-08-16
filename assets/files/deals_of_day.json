@@ -1,0 +1,15 @@
+{
+  "date": "2025-08-13",
+  "items": [
+    {
+      "productId": "p_strawberry_box",
+      "dealPrice": 2.49,
+      "endsAt": "2025-08-13T21:00:00Z"
+    },
+    {
+      "productId": "p_cheddar_block",
+      "dealPrice": 2.19,
+      "endsAt": "2025-08-13T21:00:00Z"
+    }
+  ]
+}

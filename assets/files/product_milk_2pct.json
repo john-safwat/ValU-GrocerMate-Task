@@ -1,0 +1,27 @@
+{
+  "id": "p_milk_2pct",
+  "title": "Milk 2% 1L",
+  "brand": "DairyPure",
+  "price": 1.29,
+  "originalPrice": 1.49,
+  "stock": 6,
+  "images": [
+    "https://picsum.photos/seed/milk1/600/400",
+    "https://picsum.photos/seed/milk2/600/400"
+  ],
+  "description": "Pasteurized cow milk.",
+  "nutrition": {
+    "calories": 120,
+    "protein": 8,
+    "fat": 5,
+    "carbs": 11
+  },
+  "allergens": [
+    "milk"
+  ],
+  "related": [
+    "p_milk_skim",
+    "p_cereal_oats",
+    "p_bread_sourdough"
+  ]
+}

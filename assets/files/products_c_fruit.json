@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "id": "p_apple_gala",
+      "title": "Apple Gala (1kg)",
+      "brand": "FreshFarm",
+      "price": 2.49,
+      "originalPrice": 2.99,
+      "stock": 37,
+      "image": "https://picsum.photos/seed/apple/600/400",
+      "badges": ["deal", "fresh"],
+      "categoryId": "c_fruit",
+      "rating": 4.5
+    },
+    {
+      "id": "p_banana_chiquita",
+      "title": "Banana (1kg)",
+      "brand": "SunnyOrchard",
+      "price": 1.79,
+      "originalPrice": 1.79,
+      "stock": 82,
+      "image": "https://picsum.photos/seed/banana/600/400",
+      "badges": ["fresh"],
+      "categoryId": "c_fruit",
+      "rating": 4.6
+    },
+    {
+      "id": "p_orange_navel",
+      "title": "Orange Navel (1kg)",
+      "brand": "GreenLeaf",
+      "price": 2.19,
+      "originalPrice": 2.49,
+      "stock": 0,
+      "image": "https://picsum.photos/seed/orange/600/400",
+      "badges": ["oos", "vitaminC"],
+      "categoryId": "c_fruit",
+      "rating": 4.2
+    },
+    {
+      "id": "p_grapes_red",
+      "title": "Red Grapes (500g)",
+      "brand": "FreshFarm",
+      "price": 2.59,
+      "originalPrice": 2.99,
+      "stock": 19,
+      "image": "https://picsum.photos/seed/grapes/600/400",
+      "badges": ["deal"],
+      "categoryId": "c_fruit",
+      "rating": 4.1
+    },
+    {
+      "id": "p_strawberry_box",
+      "title": "Strawberries (250g)",
+      "brand": "SunnyOrchard",
+      "price": 2.99,
+      "originalPrice": 3.49,
+      "stock": 9,
+      "image": "https://picsum.photos/seed/strawberry/600/400",
+      "badges": ["limited", "fresh"],
+      "categoryId": "c_fruit",
+      "rating": 4.7
+    }
+  ],
+  "page": 1,
+  "pageSize": 10,
+  "total": 128,
+  "sort": "popularity_desc"
+}

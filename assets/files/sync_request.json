@@ -1,0 +1,17 @@
+{
+  "baseVersion": 42,
+  "mutations": [
+    {
+      "op": "purchase",
+      "idempotencyKey": "uuid-123",
+      "payload": {
+        "items": [
+          {
+            "productId": "p_milk_2pct",
+            "qty": 2
+          }
+        ]
+      }
+    }
+  ]
+}

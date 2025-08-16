@@ -1,0 +1,26 @@
+{
+  "id": "p_bread_sourdough",
+  "title": "Sourdough Bread",
+  "brand": "BakeHouse",
+  "price": 2.79,
+  "originalPrice": 2.99,
+  "stock": 12,
+  "images": [
+    "https://picsum.photos/seed/sourdough/600/400"
+  ],
+  "description": "Artisan sourdough with natural starter.",
+  "nutrition": {
+    "calories": 180,
+    "protein": 6,
+    "fat": 1,
+    "carbs": 36
+  },
+  "allergens": [
+    "gluten"
+  ],
+  "related": [
+    "p_cheddar_block",
+    "p_butter_salted",
+    "p_croissant_butter"
+  ]
+}
