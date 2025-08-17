@@ -18,6 +18,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
   Bloc.observer = AppBlocObserver();
+  await getIt<AppConfigProvider>().init();
   runApp(
     ChangeNotifierProvider.value(
       value: getIt<AppConfigProvider>()..setLocale(Constants.enLocaleKey),

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valu_task/features/products/data/datasource/contract/products_remote_datasource.dart';
+import 'package:valu_task/features/products/data/models/deals_of_the_day_dto.dart';
 import 'package:valu_task/features/products/data/models/product_details_dto.dart';
 import 'package:valu_task/features/products/data/models/products_response_dto.dart';
 
@@ -40,5 +41,13 @@ class ProductsRemoteDatasourceImpl implements ProductsRemoteDatasource {
     } catch (e) {
       throw Exception('Failed to load product details for ID $productId');
     }
+  }
+
+  @override
+  Future<DealsOfTheDayDto> getDealsOfTheDay() async {
+    var response = await assetBundle.loadString(
+      "assets/files/deals_of_day.json",
+    );
+    return DealsOfTheDayDto.fromJson(json.decode(response));
   }
 }

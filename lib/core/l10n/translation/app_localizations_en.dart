@@ -82,4 +82,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addAllToCart => 'Add All To Cart';
+
+  @override
+  String get dealOfTheDay => 'Deal Of The Day';
 }

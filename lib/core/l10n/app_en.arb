@@ -23,5 +23,6 @@
   "searchHint": "Search products...",
   "searchInitial": "Enter a search term",
   "noResults": "No results found",
-  "addAllToCart": "Add All To Cart"
+  "addAllToCart": "Add All To Cart",
+  "dealOfTheDay": "Deal Of The Day"
 }

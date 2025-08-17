@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valu_task/core/l10n/translation/app_localizations.dart';
 import 'package:valu_task/core/routing/app_routes.dart';
+import 'package:valu_task/core/themeing/app_colors.dart';
 import 'package:valu_task/features/products/domain/entity/products_response.dart';
 import 'package:valu_task/features/products/presentation/home/home_bloc.dart';
 import 'package:valu_task/features/products/presentation/home/home_events.dart';
@@ -42,7 +43,6 @@ class ProductCard extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Image
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.network(
@@ -60,12 +60,10 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 12),
-            // Product Details
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Title and Save Button
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -98,7 +96,16 @@ class ProductCard extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 4),
-                  // Brand
+                  if (product.dealPrice != null)
+                    Row(
+                      children: [
+                        Text(
+                          AppLocalizations.of(context)!.dealOfTheDay,
+                          style: const TextStyle(color: AppColors.cyan),
+                        ),
+                      ],
+                    ),
+                  if (product.dealPrice != null) const SizedBox(height: 4),
                   Text(
                     product.brand,
                     style: theme.textTheme.bodySmall?.copyWith(
@@ -106,7 +113,6 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  // Rating
                   Row(
                     children: [
                       const Icon(Icons.star, color: Colors.amber, size: 16),
@@ -118,11 +124,10 @@ class ProductCard extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 4),
-                  // Price
                   Row(
                     children: [
                       Text(
-                        '\$${product.price.toStringAsFixed(2)}',
+                        '\$${(product.dealPrice ?? product.price).toStringAsFixed(2)}',
                         style: theme.textTheme.titleMedium?.copyWith(
                           color: theme.colorScheme.primary,
                           fontWeight: FontWeight.bold,
@@ -141,7 +146,7 @@ class ProductCard extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 4),
-                  // Stock Status
+
                   Text(
                     product.stock > 0
                         ? AppLocalizations.of(context)!.inStock
@@ -151,7 +156,6 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  // Badges
                   if (product.badges.isNotEmpty)
                     Wrap(
                       spacing: 4,
@@ -173,7 +177,6 @@ class ProductCard extends StatelessWidget {
                               .toList(),
                     ),
                   const SizedBox(height: 8),
-                  // Cart Button
                   product.isInCart
                       ? Row(
                         children: [

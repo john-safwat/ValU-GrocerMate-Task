@@ -53,11 +53,15 @@ class _HomeState extends State<Home> {
           actions: [
             IconButton(
               onPressed: () {
-                _showSavedItemsBottomSheet(bloc , context);
+                _showSavedItemsBottomSheet(bloc, context);
               },
               icon: const Icon(Icons.bookmark),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Iconsax.shopping_cart_bold),
         ),
         body: CustomScrollView(
           slivers: [
@@ -227,7 +231,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  void _showSavedItemsBottomSheet(HomeBloc bloc , BuildContext context) {
+  void _showSavedItemsBottomSheet(HomeBloc bloc, BuildContext context) {
     showModalBottomSheet(
       context: context,
       backgroundColor: Theme.of(context).colorScheme.surface,

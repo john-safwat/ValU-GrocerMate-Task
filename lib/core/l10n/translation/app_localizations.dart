@@ -242,6 +242,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add All To Cart'**
   String get addAllToCart;
+
+  /// No description provided for @dealOfTheDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Deal Of The Day'**
+  String get dealOfTheDay;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

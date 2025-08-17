@@ -38,6 +38,8 @@ class ProductsRepositoryImpl implements ProductsRepository {
           page: page,
           pageSize: pageSize,
         );
+        final deals = await remoteDatasource.getDealsOfTheDay();
+        final items = deals.items ?? [];
         final dtos = responseDto.productDto ?? [];
         final products = <Product>[];
         for (var dto in dtos) {
@@ -47,14 +49,18 @@ class ProductsRepositoryImpl implements ProductsRepository {
           final isInCart = localProduct?.isInCart ?? false;
           final isSaved = localProduct?.isInSaved ?? false;
           final orderQuantity = localProduct?.orderQuantity ?? 0;
-          products.add(
-            mapper.mapProductDtoToProduct(
-              dto,
-              isInCart: isInCart,
-              isSaved: isSaved,
-              orderQuantity: orderQuantity,
-            ),
+          final product = mapper.mapProductDtoToProduct(
+            dto,
+            isInCart: isInCart,
+            isSaved: isSaved,
+            orderQuantity: orderQuantity,
           );
+          var validItems =
+              items.where((e) => e.productId == product.id).toList();
+          if (validItems.isNotEmpty) {
+            product.dealPrice = (validItems.first.dealPrice ?? 0).toDouble();
+          }
+          products.add(product);
         }
         await localDatasource.saveProducts(
           mapper.mapProductDtoListToLocalProductList(dtos),

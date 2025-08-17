@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:valu_task/core/di/di.dart';
 import 'package:valu_task/core/network_utils/results.dart';
+import 'package:valu_task/core/provider/app_config_provider.dart';
 import 'package:valu_task/features/products/domain/use_case/search_products_use_case.dart';
 import 'package:valu_task/features/products/presentation/search/search_event.dart';
 import 'package:valu_task/features/products/presentation/search/search_state.dart';
@@ -10,7 +12,11 @@ import 'package:valu_task/features/products/presentation/search/search_state.dar
 @injectable
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final SearchProductsUseCase searchProductsUseCase;
-  final Duration _debounceDelay = const Duration(milliseconds: 500);
+  final Duration _debounceDelay = Duration(
+    milliseconds:
+        (getIt<AppConfigProvider>().appConfiguration.searchDebounceMs ?? 1000)
+            .toInt(),
+  );
   String? _lastQuery;
 
   SearchBloc(this.searchProductsUseCase) : super(SearchState()) {
@@ -18,10 +24,9 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   }
 
   Future<void> _onSearchProducts(
-      SearchProducts event,
-      Emitter<SearchState> emit,
-      ) async {
-
+    SearchProducts event,
+    Emitter<SearchState> emit,
+  ) async {
     if (event.query.isEmpty) {
       _lastQuery = null;
       emit(state.copyWith(products: const Results.initial()));
