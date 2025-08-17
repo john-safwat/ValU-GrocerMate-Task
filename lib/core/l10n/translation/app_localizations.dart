@@ -314,6 +314,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Purchase Success'**
   String get purchaseSuccess;
+
+  /// No description provided for @noInternetError.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection. Please check your network.'**
+  String get noInternetError;
+
+  /// No description provided for @timeoutError.
+  ///
+  /// In en, this message translates to:
+  /// **'Request timed out. Please try again.'**
+  String get timeoutError;
+
+  /// No description provided for @unauthorizedError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unauthorized access. Please log in.'**
+  String get unauthorizedError;
+
+  /// No description provided for @notFoundError.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested resource not found.'**
+  String get notFoundError;
+
+  /// No description provided for @serverError.
+  ///
+  /// In en, this message translates to:
+  /// **'Server error. Please try again later.'**
+  String get serverError;
+
+  /// No description provided for @clientError.
+  ///
+  /// In en, this message translates to:
+  /// **'Client error. Please check your request.'**
+  String get clientError;
+
+  /// No description provided for @networkError.
+  ///
+  /// In en, this message translates to:
+  /// **'Network error occurred.'**
+  String get networkError;
+
+  /// No description provided for @parsingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to parse response data.'**
+  String get parsingError;
+
+  /// No description provided for @ioException.
+  ///
+  /// In en, this message translates to:
+  /// **'Input/output error occurred.'**
+  String get ioException;
+
+  /// No description provided for @unknownError.
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred.'**
+  String get unknownError;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

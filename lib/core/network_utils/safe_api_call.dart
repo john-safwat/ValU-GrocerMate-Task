@@ -3,8 +3,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:valu_task/core/base_ui/app_error_message.dart';
+import 'package:valu_task/core/di/di.dart';
 import 'package:valu_task/core/network_utils/app_errors.dart';
 import 'package:valu_task/core/network_utils/results.dart';
+import 'package:valu_task/core/provider/app_config_provider.dart';
 
 Future<Results<T>> safeApiCall<T>(Future<Results<T>> Function() apiCall) async {
   try {
@@ -15,8 +17,8 @@ Future<Results<T>> safeApiCall<T>(Future<Results<T>> Function() apiCall) async {
     debugPrint('❌ SocketException: $e\nStackTrace: $stackTrace');
     return Results<T>.error(
       error: NoInternetError(
-        const AppErrorMessage(
-          'No internet connection. Please check your network.',
+        AppErrorMessage(
+          getIt<AppConfigProvider>().localizations.noInternetError,
         ),
       ),
     );
@@ -24,7 +26,9 @@ Future<Results<T>> safeApiCall<T>(Future<Results<T>> Function() apiCall) async {
     debugPrint('❌ TimeoutException: $e\nStackTrace: $stackTrace');
     return Results<T>.error(
       error: TimeoutError(
-        const AppErrorMessage('Request timed out. Please try again.'),
+        AppErrorMessage(
+          getIt<AppConfigProvider>().localizations.timeoutError,
+        ),
       ),
     );
   } on HttpException catch (e, stackTrace) {
@@ -33,19 +37,25 @@ Future<Results<T>> safeApiCall<T>(Future<Results<T>> Function() apiCall) async {
     if (message.contains('401')) {
       return Results<T>.error(
         error: UnauthorizedError(
-          const AppErrorMessage('Unauthorized access. Please log in.'),
+          AppErrorMessage(
+            getIt<AppConfigProvider>().localizations.unauthorizedError,
+          ),
         ),
       );
     } else if (message.contains('404')) {
       return Results<T>.error(
         error: NotFoundError(
-          const AppErrorMessage('Requested resource not found.'),
+          AppErrorMessage(
+            getIt<AppConfigProvider>().localizations.notFoundError,
+          ),
         ),
       );
     } else if (message.contains('5')) {
       return Results<T>.error(
         error: ServerError(
-          const AppErrorMessage('Server error. Please try again later.'),
+          AppErrorMessage(
+            getIt<AppConfigProvider>().localizations.serverError,
+          ),
           statusCode: int.tryParse(
             message
                 .split(' ')
@@ -56,7 +66,9 @@ Future<Results<T>> safeApiCall<T>(Future<Results<T>> Function() apiCall) async {
     } else if (message.contains('4')) {
       return Results<T>.error(
         error: ClientError(
-          const AppErrorMessage('Client error. Please check your request.'),
+          AppErrorMessage(
+            getIt<AppConfigProvider>().localizations.clientError,
+          ),
           statusCode: int.tryParse(
             message
                 .split(' ')
@@ -66,27 +78,37 @@ Future<Results<T>> safeApiCall<T>(Future<Results<T>> Function() apiCall) async {
       );
     }
     return Results<T>.error(
-      error: NetworkError(const AppErrorMessage('Network error occurred.')),
+      error: NetworkError(
+        AppErrorMessage(
+          getIt<AppConfigProvider>().localizations.networkError,
+        ),
+      ),
     );
   } on FormatException catch (e, stackTrace) {
     debugPrint('❌ FormatException: $e\nStackTrace: $stackTrace');
     return Results<T>.error(
       error: ParsingError(
-        const AppErrorMessage('Failed to parse response data.'),
+        AppErrorMessage(
+          getIt<AppConfigProvider>().localizations.parsingError,
+        ),
       ),
     );
   } on IOException catch (e, stackTrace) {
     debugPrint('❌ IOException: $e\nStackTrace: $stackTrace');
     return Results<T>.error(
       error: NetworkError(
-        const AppErrorMessage('Input/output error occurred.'),
+        AppErrorMessage(
+          getIt<AppConfigProvider>().localizations.ioException,
+        ),
       ),
     );
   } catch (e, stackTrace) {
     debugPrint('❌ Unknown Exception: $e\nStackTrace: $stackTrace');
     return Results<T>.error(
       error: UnKnownError(
-        const AppErrorMessage('An unexpected error occurred.'),
+        AppErrorMessage(
+          getIt<AppConfigProvider>().localizations.unknownError,
+        ),
       ),
     );
   }

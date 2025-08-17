@@ -118,4 +118,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get purchaseSuccess => 'Purchase Success';
+
+  @override
+  String get noInternetError => 'No internet connection. Please check your network.';
+
+  @override
+  String get timeoutError => 'Request timed out. Please try again.';
+
+  @override
+  String get unauthorizedError => 'Unauthorized access. Please log in.';
+
+  @override
+  String get notFoundError => 'Requested resource not found.';
+
+  @override
+  String get serverError => 'Server error. Please try again later.';
+
+  @override
+  String get clientError => 'Client error. Please check your request.';
+
+  @override
+  String get networkError => 'Network error occurred.';
+
+  @override
+  String get parsingError => 'Failed to parse response data.';
+
+  @override
+  String get ioException => 'Input/output error occurred.';
+
+  @override
+  String get unknownError => 'An unexpected error occurred.';
 }
