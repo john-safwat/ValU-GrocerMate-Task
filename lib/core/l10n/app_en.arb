@@ -34,8 +34,8 @@
   "tax": "Tax",
   "deliveryFee": "DeliveryFee",
   "free": "Free",
-  "saveForLater" : "Save For Later",
-  "purchaseSuccess" : "Purchase Success",
+  "saveForLater": "Save For Later",
+  "purchaseSuccess": "Purchase Success",
   "noInternetError": "No internet connection. Please check your network.",
   "timeoutError": "Request timed out. Please try again.",
   "unauthorizedError": "Unauthorized access. Please log in.",
@@ -45,5 +45,7 @@
   "networkError": "Network error occurred.",
   "parsingError": "Failed to parse response data.",
   "ioException": "Input/output error occurred.",
-  "unknownError": "An unexpected error occurred."
+  "unknownError": "An unexpected error occurred.",
+  "confirm": "Confirm",
+  "quantityIssueMessage": "accept new price,remove item, or adjust qty"
 }

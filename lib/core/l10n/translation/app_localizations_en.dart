@@ -148,4 +148,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unknownError => 'An unexpected error occurred.';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get quantityIssueMessage => 'accept new price,remove item, or adjust qty';
 }

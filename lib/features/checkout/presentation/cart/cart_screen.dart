@@ -45,9 +45,7 @@ class _CartScreenState extends State<CartScreen> {
                 msg: AppLocalizations.of(context)!.purchaseSuccess,
               );
             } else if (state.purchase.status == Status.error) {
-              Fluttertoast.showToast(
-                msg: state.purchase.error!.errorMessage.message,
-              );
+              _showConfirmationBottomSheet();
             }
           },
           builder: (context, state) {
@@ -375,6 +373,36 @@ class _CartScreenState extends State<CartScreen> {
           },
         ),
       ),
+    );
+  }
+
+  void _showConfirmationBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) {
+        return Container(
+          padding: const EdgeInsets.all(24),
+          child: IntrinsicHeight(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  AppLocalizations.of(context)!.quantityIssueMessage,
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 16),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(AppLocalizations.of(context)!.confirm),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

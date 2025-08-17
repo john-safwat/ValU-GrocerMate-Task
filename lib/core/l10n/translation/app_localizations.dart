@@ -374,6 +374,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'An unexpected error occurred.'**
   String get unknownError;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @quantityIssueMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'accept new price,remove item, or adjust qty'**
+  String get quantityIssueMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
