@@ -23,4 +23,6 @@ abstract interface class ProductsRepository {
   Future<Results<Product>> getProductById(String productId);
 
   Future<Results<List<Product>>> searchProducts(String query);
+  Future<Results<List<Product>>> getSavedProducts();
+  Future<Results<void>> addAllNonCartSavedToCart();
 }

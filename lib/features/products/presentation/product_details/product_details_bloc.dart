@@ -60,8 +60,6 @@ class ProductDetailsBloc
           ),
         );
       }
-    } else {
-      // Optionally emit an error state or show a snackbar in the UI
     }
   }
 
@@ -84,8 +82,6 @@ class ProductDetailsBloc
           ),
         );
       }
-    } else {
-      // Optionally emit an error state or show a snackbar in the UI
     }
   }
 
@@ -111,8 +107,6 @@ class ProductDetailsBloc
           ),
         );
       }
-    } else {
-      // Optionally emit an error state or show a snackbar in the UI
     }
   }
 }

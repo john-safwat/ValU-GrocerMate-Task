@@ -13,6 +13,7 @@ import 'package:valu_task/features/products/presentation/home/home_bloc.dart';
 import 'package:valu_task/features/products/presentation/home/home_events.dart';
 import 'package:valu_task/features/products/presentation/home/home_state.dart';
 import 'package:valu_task/features/products/presentation/widget/product_card.dart';
+import 'package:valu_task/features/products/presentation/widget/saved_items_list_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -49,6 +50,14 @@ class _HomeState extends State<Home> {
             icon: const Icon(Iconsax.search_normal_1_outline),
           ),
           title: Text(AppLocalizations.of(context)!.appTitle),
+          actions: [
+            IconButton(
+              onPressed: () {
+                _showSavedItemsBottomSheet(bloc , context);
+              },
+              icon: const Icon(Icons.bookmark),
+            ),
+          ],
         ),
         body: CustomScrollView(
           slivers: [
@@ -215,6 +224,17 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showSavedItemsBottomSheet(HomeBloc bloc , BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      isScrollControlled: true,
+      isDismissible: false,
+      enableDrag: false,
+      builder: (context) => SavedItemsListWidget(bloc: bloc),
     );
   }
 }

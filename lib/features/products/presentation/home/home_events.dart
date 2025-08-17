@@ -48,3 +48,11 @@ class UpdateProductOrderQuantityEvent extends HomeEvents {
 
   UpdateProductOrderQuantityEvent(this.productId, this.quantity);
 }
+
+class GetSavedItemsEvent extends HomeEvents {
+  GetSavedItemsEvent();
+}
+
+class AddAllToCartEvent extends HomeEvents {
+  AddAllToCartEvent();
+}

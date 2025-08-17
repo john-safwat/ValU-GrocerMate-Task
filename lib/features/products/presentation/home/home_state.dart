@@ -5,11 +5,12 @@ import 'package:valu_task/features/products/domain/entity/products_response.dart
 class HomeState {
   Results<List<Category>>? categories = const Results<List<Category>>.initial();
   Results<List<String>>? brands = const Results<List<String>>.initial();
-  Results<ProductsResponse>? products = const Results<ProductsResponse>.initial();
+  Results<ProductsResponse>? products =
+      const Results<ProductsResponse>.initial();
+  Results<List<Product>>? savedItems = const Results<List<Product>>.initial();
   Category? selectedCategory;
   int currentPage = 1;
   bool hasMorePages = true;
-
 
   HomeState({
     this.categories,
@@ -17,6 +18,7 @@ class HomeState {
     this.products,
     this.selectedCategory,
     this.currentPage = 1,
+    this.savedItems,
     this.hasMorePages = true,
   });
 
@@ -27,6 +29,7 @@ class HomeState {
     Category? selectedCategory,
     int? currentPage,
     bool? hasMorePages,
+    Results<List<Product>>? savedItems,
   }) {
     return HomeState(
       categories: categories ?? this.categories,
@@ -35,6 +38,7 @@ class HomeState {
       selectedCategory: selectedCategory ?? this.selectedCategory,
       currentPage: currentPage ?? this.currentPage,
       hasMorePages: hasMorePages ?? this.hasMorePages,
+      savedItems: savedItems ?? this.savedItems,
     );
   }
 }

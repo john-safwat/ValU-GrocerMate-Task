@@ -236,6 +236,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No results found'**
   String get noResults;
+
+  /// No description provided for @addAllToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add All To Cart'**
+  String get addAllToCart;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -79,4 +79,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noResults => 'No results found';
+
+  @override
+  String get addAllToCart => 'Add All To Cart';
 }

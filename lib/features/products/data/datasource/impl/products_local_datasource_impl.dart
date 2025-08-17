@@ -119,7 +119,6 @@ class ProductsLocalDatasourceImpl implements ProductsLocalDatasource {
     });
   }
 
-
   @override
   Future<List<LocalProduct>> searchProducts(String query) async {
     if (query.isEmpty) {
@@ -131,4 +130,8 @@ class ProductsLocalDatasourceImpl implements ProductsLocalDatasource {
         .findAll();
   }
 
+  @override
+  Future<List<LocalProduct>> getSavedProducts() async {
+    return isar.localProducts.filter().isInSavedEqualTo(true).findAll();
+  }
 }

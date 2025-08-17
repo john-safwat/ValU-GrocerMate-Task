@@ -180,4 +180,27 @@ class ProductsRepositoryImpl implements ProductsRepository {
       );
     });
   }
+
+  @override
+  Future<Results<List<Product>>> getSavedProducts() async {
+    return safeApiCall<List<Product>>(() async {
+      final locals = await localDatasource.getSavedProducts();
+      return Results.success(
+        data: mapper.mapLocalProductListToProductList(locals),
+      );
+    });
+  }
+
+  @override
+  Future<Results<void>> addAllNonCartSavedToCart() async {
+    return safeApiCall(() async {
+      final savedProducts = await localDatasource.getSavedProducts();
+      for (var local in savedProducts) {
+        if (!local.isInCart) {
+          await localDatasource.updateCart(local.id ?? '', true);
+        }
+      }
+      return const Results.success(data: null);
+    });
+  }
 }

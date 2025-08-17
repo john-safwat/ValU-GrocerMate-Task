@@ -45,6 +45,8 @@ import '../../features/products/domain/repository/categories_repository.dart'
     as _i579;
 import '../../features/products/domain/repository/products_repository.dart'
     as _i822;
+import '../../features/products/domain/use_case/add_all_saved_items_to_cart_use_case.dart'
+    as _i232;
 import '../../features/products/domain/use_case/get_brands_by_category_use_case.dart'
     as _i309;
 import '../../features/products/domain/use_case/get_categories_use_case.dart'
@@ -53,6 +55,8 @@ import '../../features/products/domain/use_case/get_product_details_use_case.dar
     as _i721;
 import '../../features/products/domain/use_case/get_products_use_case.dart'
     as _i1071;
+import '../../features/products/domain/use_case/get_saved_items_use_case.dart'
+    as _i548;
 import '../../features/products/domain/use_case/search_products_use_case.dart'
     as _i163;
 import '../../features/products/domain/use_case/update_product_order_quantitiy_use_case.dart'
@@ -144,6 +148,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i721.GetProductDetailsUseCase(gh<_i822.ProductsRepository>()));
     gh.factory<_i163.SearchProductsUseCase>(
         () => _i163.SearchProductsUseCase(gh<_i822.ProductsRepository>()));
+    gh.factory<_i548.GetSavedProductsUseCase>(
+        () => _i548.GetSavedProductsUseCase(gh<_i822.ProductsRepository>()));
+    gh.factory<_i232.AddAllNonCartSavedToCartUseCase>(() =>
+        _i232.AddAllNonCartSavedToCartUseCase(gh<_i822.ProductsRepository>()));
     gh.factory<_i1014.GetCategoriesUseCase>(
         () => _i1014.GetCategoriesUseCase(gh<_i579.CategoriesRepository>()));
     gh.factory<_i309.GetBrandsByCategoryUseCase>(() =>
@@ -155,6 +163,7 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i966.UpdateProductsCartUseCase>(),
           gh<_i179.UpdateProductSavedUseCase>(),
           gh<_i522.UpdateProductOrderQuantityUseCase>(),
+          gh<_i548.GetSavedProductsUseCase>(),
         ));
     gh.factory<_i1041.ProductDetailsBloc>(() => _i1041.ProductDetailsBloc(
           gh<_i721.GetProductDetailsUseCase>(),

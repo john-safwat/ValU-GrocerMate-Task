@@ -22,5 +22,6 @@
   "search": "search",
   "searchHint": "Search products...",
   "searchInitial": "Enter a search term",
-  "noResults": "No results found"
+  "noResults": "No results found",
+  "addAllToCart": "Add All To Cart"
 }
