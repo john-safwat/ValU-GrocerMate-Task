@@ -23,10 +23,10 @@ class AppConfiguration {
   }
   bool? showDeals;
   bool? enablePriceRevalidation;
-  num? taxRate;
+  double? taxRate;
   String? currency;
-  num? deliveryFee;
-  num? freeDeliveryThreshold;
+  double? deliveryFee;
+  double? freeDeliveryThreshold;
   num? searchDebounceMs;
   bool? enableSavedForLater;
   bool? maintenanceMode;

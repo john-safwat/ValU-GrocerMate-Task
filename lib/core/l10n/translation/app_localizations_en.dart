@@ -85,4 +85,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dealOfTheDay => 'Deal Of The Day';
+
+  @override
+  String get cartTitle => 'Cart';
+
+  @override
+  String get emptyCart => 'Your cart is empty';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout => 'Checkout';
+
+  @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get discount => 'Discount';
+
+  @override
+  String get tax => 'Tax';
+
+  @override
+  String get deliveryFee => 'DeliveryFee';
+
+  @override
+  String get free => 'Free';
+
+  @override
+  String get saveForLater => 'Save For Later';
+
+  @override
+  String get purchaseSuccess => 'Purchase Success';
 }

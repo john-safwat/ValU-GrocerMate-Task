@@ -19,6 +19,24 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:isar/isar.dart' as _i338;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/checkout/data/datasource/contract/checkout_local_datasource.dart'
+    as _i157;
+import '../../features/checkout/data/datasource/contract/checkout_remote_datasource.dart'
+    as _i85;
+import '../../features/checkout/data/datasource/impl/checkout_local_datasource_impl.dart'
+    as _i230;
+import '../../features/checkout/data/datasource/impl/checkout_remote_datasource_impl.dart'
+    as _i936;
+import '../../features/checkout/data/mapper/purchase_response_mapper.dart'
+    as _i1006;
+import '../../features/checkout/data/repository/checkout_repository_impl.dart'
+    as _i763;
+import '../../features/checkout/domain/repository/checkout_repository.dart'
+    as _i730;
+import '../../features/checkout/domain/use_case/chekout_use_case.dart' as _i536;
+import '../../features/checkout/domain/use_case/get_cart_products_use_case.dart'
+    as _i910;
+import '../../features/checkout/presentation/cart/cart_bloc.dart' as _i298;
 import '../../features/products/data/datasource/contract/categories_local_datasource.dart'
     as _i271;
 import '../../features/products/data/datasource/contract/categories_remote_datasource.dart'
@@ -106,11 +124,15 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i911.ProductsMapper>(() => _i911.ProductsMapper());
     gh.factory<_i834.CategoriesMapper>(() => _i834.CategoriesMapper());
+    gh.factory<_i1006.PurchaseResponseMapper>(
+        () => _i1006.PurchaseResponseMapper());
     gh.lazySingleton<_i558.FlutterSecureStorage>(
         () => sharedPreferencesModule.flutterSecureStorage);
     gh.lazySingleton<_i895.Connectivity>(() => connectivityModule.connectivity);
     gh.lazySingleton<_i281.AssetBundle>(
         () => assetBundleModule.provideAssetBundle());
+    gh.factory<_i85.CheckoutRemoteDatasource>(
+        () => _i936.CheckoutRemoteDatasourceImpl(gh<_i409.AssetBundle>()));
     gh.singleton<_i291.AppConfigProvider>(
         () => _i291.AppConfigProvider(gh<_i558.FlutterSecureStorage>()));
     gh.factory<_i622.ProductsRemoteDatasource>(
@@ -121,6 +143,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i305.CategoriesLocalDatasourceImpl(gh<_i338.Isar>()));
     gh.factory<_i949.CategoriesRemoteDatasource>(
         () => _i245.CategoriesRemoteDatasourceImpl(gh<_i281.AssetBundle>()));
+    gh.factory<_i157.CheckoutLocalDatasource>(
+        () => _i230.CheckoutLocalDatasourceImpl(gh<_i338.Isar>()));
     gh.singleton<_i655.NetworkInfo>(
         () => _i899.NetworkInfoImpl(gh<_i895.Connectivity>()));
     gh.factory<_i822.ProductsRepository>(() => _i701.ProductsRepositoryImpl(
@@ -135,6 +159,16 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i655.NetworkInfo>(),
           gh<_i834.CategoriesMapper>(),
         ));
+    gh.factory<_i730.CheckoutRepository>(() => _i763.CheckoutRepositoryImpl(
+          gh<_i85.CheckoutRemoteDatasource>(),
+          gh<_i157.CheckoutLocalDatasource>(),
+          gh<_i911.ProductsMapper>(),
+          gh<_i1006.PurchaseResponseMapper>(),
+        ));
+    gh.factory<_i910.GetCartProductsUseCase>(
+        () => _i910.GetCartProductsUseCase(gh<_i730.CheckoutRepository>()));
+    gh.factory<_i536.CheckoutUseCase>(
+        () => _i536.CheckoutUseCase(gh<_i730.CheckoutRepository>()));
     gh.factory<_i179.UpdateProductSavedUseCase>(
         () => _i179.UpdateProductSavedUseCase(gh<_i822.ProductsRepository>()));
     gh.factory<_i1071.GetProductsUseCase>(
@@ -156,6 +190,13 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i1014.GetCategoriesUseCase(gh<_i579.CategoriesRepository>()));
     gh.factory<_i309.GetBrandsByCategoryUseCase>(() =>
         _i309.GetBrandsByCategoryUseCase(gh<_i579.CategoriesRepository>()));
+    gh.factory<_i298.CartBloc>(() => _i298.CartBloc(
+          gh<_i910.GetCartProductsUseCase>(),
+          gh<_i522.UpdateProductOrderQuantityUseCase>(),
+          gh<_i966.UpdateProductsCartUseCase>(),
+          gh<_i179.UpdateProductSavedUseCase>(),
+          gh<_i536.CheckoutUseCase>(),
+        ));
     gh.factory<_i109.HomeBloc>(() => _i109.HomeBloc(
           gh<_i1014.GetCategoriesUseCase>(),
           gh<_i309.GetBrandsByCategoryUseCase>(),

@@ -13,7 +13,8 @@ class Product {
   bool isSaved;
   int orderQuantity;
   double? dealPrice;
-  int updatedQuantity;
+  double? updatePrice;
+  int updatedStock;
 
   Product({
     this.id = '',
@@ -30,7 +31,8 @@ class Product {
     this.isSaved = false,
     this.orderQuantity = 0,
     this.dealPrice,
-    this.updatedQuantity = 0,
+    this.updatePrice,
+    this.updatedStock = 0,
   });
 
   Product copyWith({
@@ -49,6 +51,7 @@ class Product {
     int? orderQuantity,
     double? dealPrice,
     int? updatedQuantity,
+    double? updatePrice,
   }) {
     return Product(
       id: id ?? this.id,
@@ -65,7 +68,8 @@ class Product {
       isSaved: isSaved ?? this.isSaved,
       orderQuantity: orderQuantity ?? this.orderQuantity,
       dealPrice: dealPrice ?? this.dealPrice,
-      updatedQuantity: updatedQuantity ?? this.updatedQuantity,
+      updatedStock: updatedQuantity ?? this.updatedStock,
+      updatePrice: updatePrice ?? this.updatePrice,
     );
   }
 }

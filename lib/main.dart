@@ -42,7 +42,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       getIt<NetworkInfo>().onConnectivityChanged.listen((connections) {
-        print(connections);
         if (connections.last == ConnectivityResult.wifi ||
             connections.last == ConnectivityResult.mobile) {
           Fluttertoast.showToast(

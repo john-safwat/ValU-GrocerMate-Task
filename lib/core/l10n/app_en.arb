@@ -24,5 +24,16 @@
   "searchInitial": "Enter a search term",
   "noResults": "No results found",
   "addAllToCart": "Add All To Cart",
-  "dealOfTheDay": "Deal Of The Day"
+  "dealOfTheDay": "Deal Of The Day",
+  "cartTitle": "Cart",
+  "emptyCart": "Your cart is empty",
+  "total": "Total",
+  "checkout": "Checkout",
+  "subtotal": "Subtotal",
+  "discount": "Discount",
+  "tax": "Tax",
+  "deliveryFee": "DeliveryFee",
+  "free": "Free",
+  "saveForLater" : "Save For Later",
+  "purchaseSuccess" : "Purchase Success"
 }

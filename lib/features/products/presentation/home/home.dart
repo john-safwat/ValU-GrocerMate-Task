@@ -60,7 +60,9 @@ class _HomeState extends State<Home> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, AppRoutes.cart);
+          },
           child: const Icon(Iconsax.shopping_cart_bold),
         ),
         body: CustomScrollView(
