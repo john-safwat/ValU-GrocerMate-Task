@@ -67,4 +67,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quantityLabel => 'Quantity';
+
+  @override
+  String get search => 'search';
+
+  @override
+  String get searchHint => 'Search products...';
+
+  @override
+  String get searchInitial => 'Enter a search term';
+
+  @override
+  String get noResults => 'No results found';
 }

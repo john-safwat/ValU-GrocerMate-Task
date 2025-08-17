@@ -170,4 +170,14 @@ class ProductsRepositoryImpl implements ProductsRepository {
       }
     });
   }
+
+  @override
+  Future<Results<List<Product>>> searchProducts(String query) async {
+    return safeApiCall<List<Product>>(() async {
+      final locals = await localDatasource.searchProducts(query);
+      return Results.success(
+        data: mapper.mapLocalProductListToProductList(locals),
+      );
+    });
+  }
 }

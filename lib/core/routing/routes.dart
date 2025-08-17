@@ -3,6 +3,7 @@ import 'package:valu_task/core/l10n/translation/app_localizations.dart';
 import 'package:valu_task/core/routing/app_routes.dart';
 import 'package:valu_task/features/products/presentation/home/home.dart';
 import 'package:valu_task/features/products/presentation/product_details/product_details_screen.dart';
+import 'package:valu_task/features/products/presentation/search/search_screen.dart';
 
 abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
@@ -17,6 +18,8 @@ abstract class Routes {
               (_) =>
                   ProductDetailsScreen(productId: settings.arguments as String),
         );
+      case AppRoutes.search:
+        return MaterialPageRoute(builder: (_) => SearchScreen());
       default:
         return MaterialPageRoute(
           builder:

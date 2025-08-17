@@ -118,4 +118,17 @@ class ProductsLocalDatasourceImpl implements ProductsLocalDatasource {
       }
     });
   }
+
+
+  @override
+  Future<List<LocalProduct>> searchProducts(String query) async {
+    if (query.isEmpty) {
+      return [];
+    }
+    return isar.localProducts
+        .filter()
+        .titleContains(query, caseSensitive: false)
+        .findAll();
+  }
+
 }

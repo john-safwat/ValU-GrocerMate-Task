@@ -16,4 +16,6 @@ abstract interface class ProductsLocalDatasource {
   Future<void> updateSaved(String productId, bool isSaved);
 
   Future<void> updateOrderQuantity(String productId, int quantity);
+
+  Future<List<LocalProduct>> searchProducts(String query);
 }

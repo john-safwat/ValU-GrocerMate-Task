@@ -20,6 +20,7 @@ abstract interface class ProductsRepository {
     int quantity,
   );
 
-
   Future<Results<Product>> getProductById(String productId);
+
+  Future<Results<List<Product>>> searchProducts(String query);
 }

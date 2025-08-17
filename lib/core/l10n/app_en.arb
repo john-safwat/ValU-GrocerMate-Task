@@ -18,5 +18,9 @@
   "removeFromCart": "Remove from Cart",
   "save": "Save",
   "removeFromSaved": "Remove from Saved",
-  "quantityLabel": "Quantity"
+  "quantityLabel": "Quantity",
+  "search": "search",
+  "searchHint": "Search products...",
+  "searchInitial": "Enter a search term",
+  "noResults": "No results found"
 }

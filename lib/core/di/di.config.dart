@@ -53,6 +53,8 @@ import '../../features/products/domain/use_case/get_product_details_use_case.dar
     as _i721;
 import '../../features/products/domain/use_case/get_products_use_case.dart'
     as _i1071;
+import '../../features/products/domain/use_case/search_products_use_case.dart'
+    as _i163;
 import '../../features/products/domain/use_case/update_product_order_quantitiy_use_case.dart'
     as _i522;
 import '../../features/products/domain/use_case/update_product_saved_use_case.dart'
@@ -62,6 +64,7 @@ import '../../features/products/domain/use_case/update_products_cart_use_case.da
 import '../../features/products/presentation/home/home_bloc.dart' as _i109;
 import '../../features/products/presentation/product_details/product_details_bloc.dart'
     as _i1041;
+import '../../features/products/presentation/search/search_bloc.dart' as _i832;
 import '../network_utils/network_info.dart' as _i655;
 import '../network_utils/network_info_impl.dart' as _i899;
 import '../provider/app_config_provider.dart' as _i291;
@@ -139,6 +142,8 @@ extension GetItInjectableX on _i174.GetIt {
             gh<_i822.ProductsRepository>()));
     gh.factory<_i721.GetProductDetailsUseCase>(
         () => _i721.GetProductDetailsUseCase(gh<_i822.ProductsRepository>()));
+    gh.factory<_i163.SearchProductsUseCase>(
+        () => _i163.SearchProductsUseCase(gh<_i822.ProductsRepository>()));
     gh.factory<_i1014.GetCategoriesUseCase>(
         () => _i1014.GetCategoriesUseCase(gh<_i579.CategoriesRepository>()));
     gh.factory<_i309.GetBrandsByCategoryUseCase>(() =>
@@ -157,6 +162,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i179.UpdateProductSavedUseCase>(),
           gh<_i966.UpdateProductsCartUseCase>(),
         ));
+    gh.factory<_i832.SearchBloc>(
+        () => _i832.SearchBloc(gh<_i163.SearchProductsUseCase>()));
     return this;
   }
 }

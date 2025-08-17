@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:valu_task/core/di/di.dart';
 import 'package:valu_task/core/l10n/translation/app_localizations.dart';
 import 'package:valu_task/core/network_utils/results.dart';
 import 'package:valu_task/core/network_utils/status.dart';
+import 'package:valu_task/core/routing/app_routes.dart';
 import 'package:valu_task/features/products/domain/entity/category.dart';
 import 'package:valu_task/features/products/domain/entity/products_response.dart';
 import 'package:valu_task/features/products/presentation/home/home_bloc.dart';
@@ -39,7 +41,15 @@ class _HomeState extends State<Home> {
     return BlocProvider.value(
       value: bloc,
       child: Scaffold(
-        appBar: AppBar(title: Text(AppLocalizations.of(context)!.appTitle)),
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.search);
+            },
+            icon: const Icon(Iconsax.search_normal_1_outline),
+          ),
+          title: Text(AppLocalizations.of(context)!.appTitle),
+        ),
         body: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
