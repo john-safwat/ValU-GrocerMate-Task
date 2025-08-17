@@ -17,6 +17,7 @@ class AppConfigProvider extends ChangeNotifier {
   String get locale => _locale;
 
   Future<void> setLocale(String locale) async {
+    localizations = await AppLocalizations.delegate.load(Locale(locale));
     if (locale == _locale) return;
     _locale = locale;
     await _flutterSecureStorage.write(key: Constants.localeKey, value: _locale);

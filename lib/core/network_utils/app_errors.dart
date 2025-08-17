@@ -45,3 +45,6 @@ class ParsingError extends AppError {
 class NoInternetError extends AppError {
   NoInternetError(super.errorMessage);
 }
+class NoProductError extends AppError {
+  NoProductError(super.errorMessage);
+}

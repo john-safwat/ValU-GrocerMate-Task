@@ -12,7 +12,7 @@ abstract class AppTheme {
       appBarTheme: AppBarTheme(
         backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.onSurface,
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0,
       ),
 

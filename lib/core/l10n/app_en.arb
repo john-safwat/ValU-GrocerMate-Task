@@ -1,3 +1,22 @@
 {
-  "appName": "ValU Task"
+  "appName": "ValU Task",
+  "appTitle": "GrocerMate",
+  "youAreOnline": "You Are Online",
+  "youAreOffline": "You Are Offline",
+  "noProductsFound": "No products found",
+  "inStock": "In Stock",
+  "outOfStock": "Out Of Stock",
+  "remove": "Remove",
+  "addToCart": "Add To Cart",
+  "productDetailsTitle": "Product Details",
+  "initializing": "Initializing...",
+  "brandLabel": "Brand",
+  "priceLabel": "Price",
+  "originalPriceLabel": "Original Price",
+  "stockLabel": "Stock",
+  "ratingLabel": "Rating",
+  "removeFromCart": "Remove from Cart",
+  "save": "Save",
+  "removeFromSaved": "Remove from Saved",
+  "quantityLabel": "Quantity"
 }

@@ -98,6 +98,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'ValU Task'**
   String get appName;
+
+  /// No description provided for @appTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'GrocerMate'**
+  String get appTitle;
+
+  /// No description provided for @youAreOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'You Are Online'**
+  String get youAreOnline;
+
+  /// No description provided for @youAreOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'You Are Offline'**
+  String get youAreOffline;
+
+  /// No description provided for @noProductsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No products found'**
+  String get noProductsFound;
+
+  /// No description provided for @inStock.
+  ///
+  /// In en, this message translates to:
+  /// **'In Stock'**
+  String get inStock;
+
+  /// No description provided for @outOfStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Out Of Stock'**
+  String get outOfStock;
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @addToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add To Cart'**
+  String get addToCart;
+
+  /// No description provided for @productDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Details'**
+  String get productDetailsTitle;
+
+  /// No description provided for @initializing.
+  ///
+  /// In en, this message translates to:
+  /// **'Initializing...'**
+  String get initializing;
+
+  /// No description provided for @brandLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Brand'**
+  String get brandLabel;
+
+  /// No description provided for @priceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get priceLabel;
+
+  /// No description provided for @originalPriceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Original Price'**
+  String get originalPriceLabel;
+
+  /// No description provided for @stockLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock'**
+  String get stockLabel;
+
+  /// No description provided for @ratingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get ratingLabel;
+
+  /// No description provided for @removeFromCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from Cart'**
+  String get removeFromCart;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @removeFromSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from Saved'**
+  String get removeFromSaved;
+
+  /// No description provided for @quantityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get quantityLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

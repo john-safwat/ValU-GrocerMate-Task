@@ -34,6 +34,10 @@ dependencies:
       url: https://pub.isar-community.dev/
     version: ^3.0.0
   path_provider:
+  skeletonizer:
+  flutter_bloc:
+  icons_plus:
+  fluttertoast:
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -51,3 +55,6 @@ flutter:
   uses-material-design: true
   generate: true
 
+  assets:
+    - assets/files/
+    - assets/images/
